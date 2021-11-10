@@ -1,0 +1,4 @@
+2021-10-07 21:09:45,598 - INFO - method: LDF
+2021-10-07 21:09:45,599 - INFO - decomposition_num: 70
+2021-10-07 21:09:45,599 - INFO - class_num: 10
+2021-10-07 21:09:50,892 - INFO - accuracy: 0.8752

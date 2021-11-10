@@ -1,0 +1,4 @@
+2021-10-07 21:40:45,006 - INFO - method: QDF
+2021-10-07 21:40:45,006 - INFO - decomposition_num: 60
+2021-10-07 21:40:45,006 - INFO - class_num: 10
+2021-10-07 21:40:50,365 - INFO - accuracy: 0.9616
