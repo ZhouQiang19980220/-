@@ -17,11 +17,12 @@ class LDA():
         assert n1 == n2
         self.n = n1
         
-        assert self.n_components < self.d
+        clusters = np.unique(y_train)   
+        assert self.n_components < self.d        
+        assert self.n_components < clusters.shape[0]
         
         # 全局均值
-        mean = np.mean(X_train, axis=0)
-        clusters = np.unique(y_train)        
+        mean = np.mean(X_train, axis=0)            
         # 类内散度矩阵
         Sw = np.zeros(shape=(self.d, self.d), dtype=np.float_)
         # 类间散度矩阵
@@ -37,9 +38,7 @@ class LDA():
             # 将向量转成矩阵
             temp = (mean_i - mean).reshape(1, -1)
             Sb += N_i * np.dot(temp.T, temp)
-            
-        S =  np.dot(np.linalg.inv(Sw), Sb)
-        
+        S =  np.dot(np.linalg.inv(Sw + 10 ** (-3) * np.eye(self.d)), Sb)
         # 取S的前k大的特征值对应的特征向量，组成变换矩阵       
         eigenvalue, featurevector = np.linalg.eig(S)
         

@@ -1,0 +1,316 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+
+\title{\textbf{随机过程作业13}}
+\author{周强(119) \ 电子学院 \ \ \  202128019427002}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    设在时间区间 $(0, t]$ 到达某商店的顾客数 $N(t), t \geq 0$ 是强度为 $\lambda>0$ 的齐次泊松过程, $N(0)=0$, 且每个顾客购买商品的概率 $p>0$, 没有买商品的概率为 $q=1-p$, 分别 以 $X(t)$ 和 $Y(t)$ 表示 $(0, t]$ 所有购买商品的顾客数和所有没有购买商品的顾客数, $t \geq 0$ 。证明 $X(t)$ 和 $Y(t)$ 分别是服从参数为 $\lambda p$ 和 $\lambda q$ 的泊松过程, 并且是相互独立的。 进一步求 $X(t)$ 和 $Y(t)$ 的均值函数 $m(t)$ 和相关函数 $R(s, t)$ 。
+\end{problem}
+
+\begin{solution}
+    由题意知，对于$x,y\in N$
+    \begin{align*}
+        & P\{
+            X(t)=x,Y(t)=y  
+        \}
+        \\
+        & =
+        P\{
+            X(t)=x,Y(t)=y
+            \big |
+            N(t) = x+y  
+        \}
+        \cdot
+        P\{
+            N(t)=x+y
+        \}
+        \\
+        &=
+        C_{x+y}^{x} p^x q^y 
+        \frac{
+            (\lambda t)^{x+y}
+            }{
+                (x+y)!
+            }
+        e^{-\lambda(x+y)}
+        \\
+        & = 
+        \frac{
+            (p \lambda t)^x
+            }{
+                x!
+            }
+            e^{-\lambda x}
+        \cdot
+        \frac{
+            (q \lambda t)^y
+            }{
+                y!
+            }
+            e^{-\lambda y}
+    \end{align*}
+    则有
+    \begin{align*}
+        & P\{
+            X(t)=x
+        \}
+        =
+        \sum_{y=0}^{\infty}{
+            P\{
+            X(t)=x,Y(t)=y  
+            \}
+        }
+        =
+        \sum_{y=0}^{\infty}{
+            \frac{
+                (p \lambda t)^x
+                }{
+                    x!
+                }
+                e^{-\lambda x}
+            \cdot
+            \frac{
+                (q \lambda t)^y
+                }{
+                    y!
+                }
+                e^{-\lambda y}
+        }
+        \\
+        &=
+        \frac{
+            (p \lambda t)^x
+            }{
+                x!
+            }
+            e^{-\lambda x}
+        \sum_{y=0}^{\infty}{
+            \frac{
+                (q \lambda t)^y
+                }{
+                    y!
+                }
+                e^{-\lambda y}
+        }
+        = \frac{
+            (p \lambda t)^x
+            }{
+                x!
+            }
+            e^{-\lambda x}
+    \end{align*}
+    同理可证
+    \begin{align*}
+        & P\{
+            Y(t)=y
+        \}
+        = \frac{
+            (q \lambda t)^y
+            }{
+                y!
+            }
+            e^{-\lambda y}
+    \end{align*}
+    因此，$X(t),Y(t)$分别是服从参数为$\lambda p, \lambda q$的Poisson过程。
+    \\
+    注意到$P\{X(t)=x,Y(t)=y\}=P\{X(t)=x\}\cdot P\{Y(t)=y\}$,因此，$X(t)$和$Y(t)$相互独立。
+    \\
+    根据Poisson过程的性质，我们有
+    \begin{align*}
+         &m_X(t)=\lambda p t,m_Y(t)=\lambda q t,t \geq 0
+        \\
+        &
+        R_{X}(s, t)=E\{X(s) X(t)\}=(\lambda p)^{2} s t+(\lambda p) \min \{s, t\}, \quad s, t \geq 0 
+        \\
+        &
+        R_{Y}(s, t)=E\{Y(s) Y(t)\}=(\lambda q)^{2} s t+(\lambda q) \min \{s, t\}, \quad s, t \geq 0
+    \end{align*}
+\end{solution}
+\begin{problem}
+    在某公共汽车起点站, 有甲、乙两路公交车。设乘客到达甲、乙两路公交车的人数分别 为参数 $\lambda_{1} 、 \lambda_{2}$ 的齐次 Poisson 过程, 且它们是相互独立的。假设 $t=0$ 时, 两路公交 车同时开始接受乘客上车。
+    \begin{itemize}
+    \item[(1)]
+    如果甲车在时刻 $t$ 发车, 计算在 $[0, t]$ 内到达甲车的乘客等待开车时间总和的期望值;
+    \item[(2)]
+    如果当甲路车上有 $n$ 个乘客时, 甲路车发车; 当乙路车上有 $m$ 个乘客时, 乙路车 发车。求甲路车比乙路车发车早的概率。(写出表达式即可)
+    \end{itemize}
+\end{problem}
+
+\begin{solution}
+    \begin{itemize}
+    \item [(1)]
+    设$S_i$为第$i$个等待甲路公交车乘客的到达时间,则$t-S_i$为该乘客的等待时间。甲车乘客的总等待时间为
+    \begin{align*}
+        S(t)=\sum_{i=0}^{N_1(t)}{
+            (t-S_i)
+        }
+    \end{align*}
+    其中$N_1(t)$为$[0,t]$时间内甲车乘客的数量。
+    \begin{align*}
+        & E\{
+            S(t) \big | N_1(t)=n
+        \}
+        = 
+        E\left\{
+            \sum_{i=0}^{n}{
+            (t-S_i)
+            } 
+            \big | 
+            N_1(t)=n
+        \right\}
+        \\
+        & =
+        nt-E\left\{
+            \sum_{i=0}^{n}{
+                S_i
+            } 
+            \big | 
+            N_1(t)=n
+        \right\}
+        \\
+        & =
+        nt-E\left\{
+            \sum_{i=0}^{n}{
+                Y_{(i)}
+            } 
+        \right\}
+        =
+        nt-E\left\{
+            \sum_{i=0}^{n}{
+                Y_i
+            } 
+        \right\}
+        \\
+        & = \frac{1}{2}nt
+    \end{align*}
+    则
+    \begin{align*}
+        &E\{S(t)\} = E\{E\{
+            S(t) \big | N_1(t)=n
+        \}\}
+    \\
+    & = 
+    \sum_{n=0}^{\infty}{
+        \frac{1}{2}nt 
+        P\{
+            N_1(t)=n
+        \}
+    }
+    =\frac{1}{2}t
+    E\{
+        N_1(t)  
+    \}
+    =\frac{1}{2} \lambda_1 t^2
+    \end{align*}
+    \item[(2)] 设$S_n$为甲车第n个乘客到达的时间，设$S_m$为乙车第m个乘客到达的时间，由于两路乘客的到达人数相互独立，则$S_n$与$S_m$相互独立。综上，甲车发车更早的概率为
+    \begin{align*}
+        P\{S_n<S_m\}
+        =
+        \int_{0}^{\infty}{
+            \int_{0}^{t_1}{
+                f(t_1,t_2)
+                dt_1dt_2
+            }
+        }
+    \end{align*}
+    其中$f(t_1,t_2)$是$S_1$和$S_2$的联合概率密度函数，为
+    \begin{align*}
+        f(t_1,t_2) = f_{S_n}(t_1) f_{S_m}(t_2)=
+        \frac{\left(\lambda_{1} t_{1}\right)^{n-1}}{(n-1) !} \lambda_{1} e^{-\lambda_{1} t_{1}} \cdot \frac{\left(\lambda_{2} t_{2}\right)^{m-1}}{(m-1) !} \lambda_{2} e^{-\lambda_{2} t_{2}}
+    \end{align*}
+    \end{itemize}
+\end{solution}
+
+\begin{problem}
+    设 $\left\{X_{n}, n \geq 1\right\}$ 独立同分布, $X_{n}$ 的概率密度函数为 $f(x)=\lambda^{2} x e^{-\lambda x}, x \geq 0$, 试求 相应的更新函数 $m(t)$ 。
+\end{problem}
+
+\begin{solution}
+    $f(x)$的拉普拉斯变换为
+    \begin{align*}
+        \widetilde{F}(s) = \mathfrak{L}\{f(x)\}
+        =
+        \frac{\lambda ^ 2}{(s+\lambda)^2} 
+    \end{align*}
+    则
+    \begin{align*}
+        \widetilde{M}(s) = \frac{\widetilde{F}(s)}{1-\widetilde{F}(s)}
+        =
+        \frac{\lambda ^2}{s(s+2\lambda)}
+    \end{align*}
+    做拉普拉斯反变换有
+    \begin{align*}
+        \frac{dm(t)}{dt}
+        =
+        \frac{1}{2}\lambda
+        (1-e^{-2 \lambda t})
+    \end{align*}
+    结合$m(0)=0$,有
+    \begin{align*}
+        m(t)=\frac{1}{2}\lambda t
+        +
+        \frac{1}{4}(e ^{-2\lambda t} - 1)
+    \end{align*}
+\end{solution}
+
+
+\begin{problem}
+    设更新过程 $N(t), t \geq 0$ 的时间间隔 $X_{1}, X_{2}, \cdots, X_{n}, \cdots$ 服从参数为 $\mu$ 的泊松分布, 试求:
+    \begin{itemize}
+        \item [(1)]
+        $S_{n}=X_{1}+X_{2}+\cdots+X_{n}$ 的分布;
+        \item[(2)]
+        计算 $P\{N(t)=n\}$ 。
+    \end{itemize}
+\end {problem}
+
+\begin{solution}
+    \begin{itemize}
+
+    \item[(1)]
+    由Poisson分布的可加性可知，$S_n$服从参数是$(n\mu)$的泊松分布，即
+    \begin{align*}
+        P\{
+            S_n=k
+        \}
+        =
+        \frac{(n\mu)^k}{k!}e^{-n\mu}
+    \end{align*}
+
+    \item[(2)]
+    由于
+    $\{
+        N(t)=n    
+    \}
+    =
+    \{
+        S_n \leq t < S_{n+1} 
+    \}
+    =
+    \{
+        S_n \leq t 
+    \}
+    -
+    \{
+        S_{n+1} \leq t 
+    \}
+    $ 
+    则有
+    \begin{align*}
+        P\{N(t)=n\}=\sum_{k=0}^{[t]} \frac{(n \mu)^{k}}{k !} e^{-n \mu}-\sum_{k=0}^{[t]} \frac{[(n+1) \mu]^{k}}{k !} e^{-(n+1) \mu}
+    \end{align*}
+\end{itemize}
+\end{solution}
+\end{document}
