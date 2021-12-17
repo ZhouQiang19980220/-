@@ -1,0 +1,175 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+
+\title{\textbf{随机过程作业15}}
+\author{周强(119) \ 电子学院 \ \ \  202128019427002}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+\end{problem}
+
+\begin{solution}
+    由相关函数的定义可知
+    \begin{align*}
+        & R_{Y}(s,t)
+        =
+        E\{
+            Y(s)Y(t)
+        \}
+        =
+        E\{
+            [2X(s)-1][2X(t)-1]
+        \}
+        \\
+        & =
+        E\{
+            4X(s)X(t)-2X(s)-2X(t)+1
+        \}
+    \end{align*}
+    由于$\{X(t),t \geq 0 \}$是初值为0的正交增量随机过程，当$0 \leq s < t$时有，
+    \begin{align*}
+        &
+        E\{
+            X(s)X(t)  
+        \}
+        =
+        E\{
+            [X(s)-X(0)][X(t)-X(0)]  
+        \}
+        \\
+        &=
+        E\{
+            [X(s)-X(0)][X(t)-X(s)+X(s)-X(0)]  
+        \}
+        \\
+        &=
+        E\{
+            [X(s)-X(0)][X(s)-X(0)]  
+        \}
+        \\
+        &=
+        E\{
+            [X(s)]^{2}
+        \}
+        =
+        E\{
+            X(s)
+        \}^{2}
+        +D\{
+            X(s)  
+        \}
+        =\mu ^ {2} + \sigma ^ 2 s
+    \end{align*}
+    因此
+    \begin{align*}
+        R_Y(s,t)=4 \mu ^ 2 + 4 \sigma ^ 2 s - 4\mu +1
+    \end{align*}
+    同理可证，当$0 \leq t < s$时有，
+    \begin{align*}
+        R_Y(s,t)=4 \mu ^ 2 + 4 \sigma ^ 2 t - 4\mu +1
+    \end{align*}
+    综上所述，
+    \begin{align*}
+        R_Y(s,t)=4 \mu ^ 2 + 4 \sigma ^ 2 \min\{s,t\} - 4\mu +1
+    \end{align*}
+\end{solution}
+
+\begin{problem}
+    
+\end{problem}
+
+\begin{solution}
+    
+\end{solution}
+
+\begin{problem}
+    
+\end{problem}
+
+\begin{solution}
+    \begin{itemize}
+        \item [(1)] $\xi(t)$的均值函数为
+        \begin{align*}
+            &
+            E\{
+                \xi (t)    
+            \}
+            =
+            E\{
+                X \cos(2t) + Y \sin(2t)    
+            \}
+            \\
+            &=
+            E\{
+                X
+            \}  
+            \cos(2t)
+            +
+            E\{
+                Y
+            \}  
+            \sin(2t)
+            \\
+            &=
+            \frac{1}{2}
+            \left(
+                \cos(2t) + \sin(2t)
+            \right) 
+        \end{align*}
+        均值函数不是常数，因此$\xi(t)$不是平稳过程。
+        \item [(2)]
+        因为$X$和$Y$是独立同分布的随机变量，且$X \sim N(0,1)$,则
+        \begin{align*}
+            E\{X^2\}=E\{Y^2\}=1,
+            E\{XY\}=0
+        \end{align*}
+        $\xi(t)$的相关函数为
+        \begin{align*}
+            R_{\xi}(s,t)
+            &=
+            E\{
+               (X \cos(2t) + Y \sin(2t))
+               (X \cos(2s) + Y \sin(2s)) 
+            \}
+            \\
+            &=
+            E\{
+                X^2 
+            \}
+            (\cos(2t)\cos(2s))
+            \\
+            &
+            +
+            E\{
+                XY 
+            \}
+            (\cos(2t)\sin(2s)+\cos(2s)\sin(2t))
+            \\
+            &
+            +
+            E\{
+                Y^2 
+            \}
+            (\sin(2t)\sin(2s))
+            \\
+            &=
+            \cos(2t)\cos(2s)
+            +
+            \sin(2t)\sin(2s)
+            \\&=
+            \cos(2t-2s)
+        \end{align*}
+    因此，$\xi(t)$是平稳过程，且均方可微。
+    \end{itemize}
+\end{solution}
+\end{document}
