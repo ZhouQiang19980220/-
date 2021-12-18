@@ -16,6 +16,7 @@
 \maketitle
 
 \begin{problem}
+    设 $\{X(t), t \geq 0\}$ 是一实的零初值正交增量过程, 且 $X(t) \sim N\left(\mu, \sigma^{2} t\right)$ 。令 $Y(t)=2 X(t)-1, t \geq 0$ 。试求过程 $\{Y(t), t \geq 0\}$ 的相关函数 $R_{Y}(s, t)$ 。
 \end{problem}
 
 \begin{solution}
@@ -85,7 +86,7 @@
 \end{solution}
 
 \begin{problem}
-    
+    设有随机过程 $X(t)=2 Z \sin (t+\Theta),-\infty<t<+\infty$, 其中 $Z$、$ \Theta$ 是相互独立的随机 变量, $Z \sim N(0,1), P(\Theta=\pi / 4)=P(\Theta=-\pi / 4)=1 / 2$ 。问过程 $X(t)$ 是否均方可积 过程? 说明理由。
 \end{problem}
 
 \begin{solution}
@@ -93,7 +94,16 @@
 \end{solution}
 
 \begin{problem}
+    设随机过程 $\xi(t)=X \cos 2 t+Y \sin 2 t,-\infty<t<+\infty$, 其中随机变量 $X$ 和 $Y$ 独立同分 布。
+    \begin{itemize}
+        \item [(1)]
+        如果 $X \sim U(0,1)$, 问过程 $\xi(t)$ 是否平稳过程？说明理由;
+        \item [(2)]
+        如果 $X \sim N(0,1)$, 问过程 $\xi(t)$ 是否均方可微? 说明理由。
+
     
+    \end{itemize}
+
 \end{problem}
 
 \begin{solution}
@@ -171,5 +181,32 @@
         \end{align*}
     因此，$\xi(t)$是平稳过程，且均方可微。
     \end{itemize}
+\end{solution}
+
+\begin{problem}
+    设随机过程 $\{X(t) ;-\infty<t<+\infty\}$ 是一实正交增量过程, 并且 $E\{X(t)\}=0$, 及满足:
+    $$
+    E\left\{[X(t)-X(s)]^{2}\right\}=|t-s|, \quad-\infty<s, t<+\infty \text {; }
+    $$
+    令: $Y(t)=X(t)-X(t-1),-\infty<t<+\infty$, 试证明 $Y(t)$ 是平稳过程。
+\end{problem}
+
+\begin{solution}
+
+\end{solution}
+
+\begin{problem}
+    设 $\xi(t)=X \sin (Y t) ; t \geq 0$, 而随机变量 $X 、 Y$ 是相互独立且都服从 $[0,1]$ 上的均匀分布, 试求此过程的均值函数及相关函数。并问此过程是否是平稳过程, 是否连续、可导?
+\end{problem}
+\begin{solution}
+
+\end{solution}
+
+\begin{problem}
+设 $\{X(t),t\in R\}$ 是连续平稳过程, 均值为m, 协方差函数为 $C_{X}(\tau)=a e^{-b|\tau|}$, 其中$\tau \in R, a, b>0$ 。对固定的 $T>0$, 令 $Y=T^{-1} \int_{0}^{T} X(s) d s$, 证明: $E\{Y\}=m$, $\operatorname{Var}(Y)=2 a\left[(b T)^{-1}-(b T)^{-2}\left(1-e^{-b T}\right)\right]$ 。
+\end{problem}
+
+\begin{solution}
+
 \end{solution}
 \end{document}
