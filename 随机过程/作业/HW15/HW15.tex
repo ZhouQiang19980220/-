@@ -90,7 +90,43 @@
 \end{problem}
 
 \begin{solution}
-    
+    $X(t)$的均值函数为
+    \begin{align*}
+        E\{X(t)\}
+        =
+        E\{2Z\sin(t + \Theta)\}
+        =
+        2E\{Z\}E\{\sin(t + \Theta)\}
+        =0
+    \end{align*}
+    $X(t)$的相关函数为
+    \begin{align*}
+        & R_{X}(t,s)
+        =
+        E\{X(t)X(s)\}
+        =
+        E\{(2Z\sin(t + \Theta))(2Z\sin(s + \Theta))\}
+        \\
+        & =
+        4E\{Z^2\}
+        E\{
+            \sin (t+\Theta)
+            \sin (s+\Theta)
+        \}
+        =
+        4
+        E\{
+            \frac{1}{2}[
+                \cos (t-s)
+                -
+                \cos (s+t+2\Theta)
+            ]
+        \}
+        \\
+        &=
+        2 \cos (t-s)
+    \end{align*}
+    由此可知，随机过程$X(t)$是平稳过程，且均方可积。
 \end{solution}
 
 \begin{problem}
@@ -192,18 +228,245 @@
 \end{problem}
 
 \begin{solution}
-
+    由题意易知，$Y(t)$的均值函数为$E\{Y(t)\}=0$。$Y(t)$的相关函数为
+    \begin{align*}
+        R_{Y}(t,s)
+        =
+        E\{Y(t)Y(s)\}
+        =
+        E\{
+            [X(t)-X(t-1)]
+            [X(s)-X(s-1)]
+        \}
+    \end{align*}
+    不失一般性地假设$s>t$。当$s>t+1$时，由$X(t)$的增量正交性可知，
+    \begin{align*}
+        R_{Y}(t,s)
+        =0
+    \end{align*}
+    当$t<s<t+1$时,
+    \begin{align*}
+        &
+        R_{Y}(t,s)
+        =
+        E\{
+            [X(t)-X(t-1)]
+            [X(s)-X(t)+X(t)-X(s-1)]
+        \}
+        \\
+        & =
+        E\{
+            [X(t)-X(t-1)]
+            [X(t)-X(s-1)]
+        \}
+        \\
+        &=
+        E\{
+            [X(t)-X(s-1)+X(s-1)-X(t-1)]
+            [X(t)-X(s-1)]
+        \}
+        \\
+        &=
+        E\{
+            [X(t)-X(s-1)]^2
+        \}
+        =|t-s+1|
+    \end{align*}
+    则$Y(t)$的相关函数仅与时间差有关。同理可证$t>s$的情况。综上，$Y(t)$是平稳过程。
 \end{solution}
 
 \begin{problem}
     设 $\xi(t)=X \sin (Y t) ; t \geq 0$, 而随机变量 $X 、 Y$ 是相互独立且都服从 $[0,1]$ 上的均匀分布, 试求此过程的均值函数及相关函数。并问此过程是否是平稳过程, 是否连续、可导?
 \end{problem}
 \begin{solution}
-
+    由题意知，$\xi (t)$的均值函数和相关函数为
+    \begin{align*}
+        E\{\xi (t)\}
+        =
+        E\{X\}E\{\sin(Yt)\}
+        =
+        \frac{1}{2}
+        \int_{0}^{1}{
+            \sin(yt)dy
+        }
+        =
+        \frac{1-\cos t}{2t}
+    \end{align*}
+    \begin{align*}
+        R_{\xi}(t,s)
+        & =
+        E\{X^2\}
+        E\{
+            \sin(Yt)
+            \sin(Ys)
+        \}
+        \\
+        & =
+        \frac{1}{3}
+        E\{
+            \frac{1}{2}
+            [
+                \cos(Y(t-s))
+                -
+                \cos(Y(t+s))
+            ]    
+        \}
+        \\
+        &=
+        \frac{1}{6}
+        \left[
+            \frac{\sin(t-s)}{t-s}
+            -
+            \frac{\sin(t+s)}{t+s}
+        \right]
+    \end{align*}
 \end{solution}
 
 \begin{problem}
 设 $\{X(t),t\in R\}$ 是连续平稳过程, 均值为m, 协方差函数为 $C_{X}(\tau)=a e^{-b|\tau|}$, 其中$\tau \in R, a, b>0$ 。对固定的 $T>0$, 令 $Y=T^{-1} \int_{0}^{T} X(s) d s$, 证明: $E\{Y\}=m$, $\operatorname{Var}(Y)=2 a\left[(b T)^{-1}-(b T)^{-2}\left(1-e^{-b T}\right)\right]$ 。
+\end{problem}
+
+\begin{solution}
+    $Y$的均值函数为
+    \begin{align*}
+        E\{Y\}
+        =
+        E\{
+            T^{-1} \int_{0}^{T} X(s) d s
+        \}
+        =
+        T^{-1} 
+        \int_{0}^{T} E\{X(s)\} ds
+        =
+        m
+    \end{align*}
+    $Y$的二阶矩为
+    \begin{align*}
+        E\{Y^2\}
+        & =
+        E\left\{
+            T^{-2}
+            \left(
+                \int_{0}^{T} X(s) ds
+            \right)
+            ^2  
+        \right\}
+        \\
+        &=
+        T^{-2}
+        E\left\{
+            \left(
+                \int_{0}^{T} X(s) ds
+            \right)
+            \left(
+                \int_{0}^{T} X(u) du
+            \right)
+        \right\}
+        \\
+        &=
+        T^{-2}
+        E\left\{
+                \int_{0}^{T} {
+                    \int_{0}^{T}
+                                {
+                                    X(u)
+                                    X(s)
+                                    du
+                                    ds
+                                }
+                } 
+        \right\}
+        \\
+        &=
+        T^{-2}
+        \int_{0}^{T} {
+            \int_{0}^{T}
+                        E\{
+                            X(u)
+                            X(s)
+                        \}
+                            du
+                            ds
+        } 
+        \\
+        &=
+        T^{-2}
+        \int_{0}^{T} {
+            \int_{0}^{T}
+            R_X(u-s)
+            duds
+        }
+        \\
+        &=
+        T^{-2}
+        \int_{0}^{T} {
+            \int_{0}^{T}
+            C_X(u-s) + m^2
+            duds
+        }
+        \\
+        &=
+        2 a\left[(b T)^{-1}-(b T)^{-2}\left(1-e^{-b T}\right)\right] 
+        + m^2
+    \end{align*}
+    则Y的方差为
+    \begin{align*}
+        Var\{Y\}
+        =
+        E\{Y^2\}
+        -(E\{Y\})^2
+        =
+        2 a\left[(b T)^{-1}-(b T)^{-2}\left(1-e^{-b T}\right)\right] 
+    \end{align*}
+
+\end{solution}
+
+\begin{problem}
+    设 $(X, Y) \sim N\left(0,0, \sigma_{1}^{2}, \sigma_{2}^{2}, \rho\right)$ ， 令 $X(t)=X+t Y$ ， 以 及 $Y(t)=\int_{0}^{t} X(u) d u$ ， $Z(t)=\int_{0}^{t} X^{2}(u) d u$, 对于任意 $0 \leq s \leq t$,
+    \begin{itemize}
+        \item [(1)]  求 $E\{X(t)\}, E\{Y(t)\}, E\{Z(t)\}, \operatorname{Cov}(X(s), X(t)), \operatorname{Cov}(Y(s), Y(t))$;
+        \item [(2)] 证明 $X(t)$ 在 $t>0$ 上均方连续、均方可导;
+        \item [(3)] 求 $Y(t)$ 及 $Z(t)$ 的均方导数。
+
+    \end{itemize}
+
+\end{problem}
+
+\begin{solution}
+    \begin{itemize}
+        \item [(1)]
+        因为$(X, Y) \sim N\left(0,0, \sigma_{1}^{2}, \sigma_{2}^{2}, \rho\right)$,则
+        \begin{align*}
+            E\{X(t)\}
+            & =
+            E\{X\} + t E\{Y\}
+            = 0
+            \\
+            E\{Y(t)\}
+            & =
+            E\left\{
+                \int_{0}^{t} X(u) d u
+            \right\}
+            =
+            \int_{0}^{t} E\{X(u)\} d u
+            =0
+        \end{align*}
+        \item [(2)]
+        
+
+        \item [(3)]
+    
+    \end{itemize}
+\end{solution}
+
+\begin{problem}
+    设随机过程 $\{X(t) ;-\infty<t<+\infty\}$ 是均值为零、自相关函数为 $R_{X}(\tau)$ 的实平稳正 态过程。设 $X(t)$ 通过线性全波检波器后, 其输出为 $Y(t)=|X(t)|$, 试求:
+    \begin{itemize}
+        \item [(1)] 随机过程 $Y(t)$ 的相关函数 $R_{Y}(\tau)$, 并说明其是否为平稳过程;
+        \item [(2)] 随机过程 $Y(t)$ 的均值和方差;
+        \item [(3)] 随机过程 $Y(t)$ 的一维概率分布密度函数 $f_{Y}(y)$ 。
+    \end{itemize}
+
 \end{problem}
 
 \begin{solution}
