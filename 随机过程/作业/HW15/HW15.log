@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.12.2)  20 DEC 2021 09:42
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.12.2)  20 DEC 2021 11:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -552,17 +552,20 @@ Underfull \hbox (badness 1072) in paragraph at lines 325--327
 \OML/cmm/m/it/12 T > \OT1/cmr/m/n/12 0$\TU/lmr/m/n/12 , \TU/SongtiSCLight(0)/m/n/12 令 $\OML/cmm/m/it/12 Y \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 T[] [][] X\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ds$\TU/lmr/m/n/12 , \TU/SongtiSCLight(0)/m/n/12 证 明\TU/lmr/m/n/12 : $\OML/cmm/m/it/12 E\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 Y\OMS/cmsy/m/n/12 g \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 m$\TU/lmr/m/n/12 , $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Y\OT1/cmr/m/n/12 ) =
  []
 
-[4] [5] [6] (./HW15.aux)
+[4]
+Missing character: There is no ∫ (U+222B) in font [lmroman12-regular]:mapping=tex-text;!
+Missing character: There is no ∫ (U+222B) in font [lmroman12-regular]:mapping=tex-text;!
+ [5] [6] [7] [8] (./HW15.aux)
 Package rerunfilecheck Info: File `HW15.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  14853 strings out of 476919
  314383 string characters out of 5821840
- 646213 words of memory out of 5000000
+ 648213 words of memory out of 5000000
  34596 multiletter control sequences out of 15000+600000
  417709 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 101i,10n,104p,483b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 101i,10n,104p,483b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on HW15.pdf (6 pages).
+Output written on HW15.pdf (8 pages).
