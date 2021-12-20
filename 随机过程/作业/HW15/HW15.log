@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.12.2)  18 DEC 2021 13:19
+=======
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.11.18)  19 DEC 2021 10:07
+>>>>>>> 1e5a2e1c635bfcd17c0909a0ab2e65779256f018
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -535,8 +539,9 @@ LaTeX Font Info:    Trying to load font information for U+rsfs on input line 17.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-] [2]
+] [2] [3]
 Missing character: There is no 、 (U+3001) in font [lmroman12-regular]:mapping=tex-text;!
+<<<<<<< HEAD
  [3]
 Underfull \hbox (badness 1383) in paragraph at lines 205--207
 \TU/SongtiSCLight(0)/b/n/12 题 目 \TU/lmr/bx/n/12 6.  \TU/SongtiSCLight(0)/m/n/12 设 $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; t \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 R\OMS/cmsy/m/n/12 g$ \TU/SongtiSCLight(0)/m/n/12 是 连 续 平 稳 过 程\TU/lmr/m/n/12 , \TU/SongtiSCLight(0)/m/n/12 均 值 为 \TU/lmr/m/n/12 m, \TU/SongtiSCLight(0)/m/n/12 协
@@ -550,13 +555,29 @@ Underfull \hbox (badness 1048) in paragraph at lines 205--207
 
 Underfull \hbox (badness 1072) in paragraph at lines 205--207
 \OML/cmm/m/it/12 T > \OT1/cmr/m/n/12 0$\TU/lmr/m/n/12 , \TU/SongtiSCLight(0)/m/n/12 令 $\OML/cmm/m/it/12 Y \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 T[] [][] X\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ds$\TU/lmr/m/n/12 , \TU/SongtiSCLight(0)/m/n/12 证 明\TU/lmr/m/n/12 : $\OML/cmm/m/it/12 E\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 Y\OMS/cmsy/m/n/12 g \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 m$\TU/lmr/m/n/12 , $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Y\OT1/cmr/m/n/12 ) =
+=======
+
+Underfull \hbox (badness 1383) in paragraph at lines 325--327
+\TU/FandolSong-Regular(0)/b/n/12 题 目 \TU/lmr/bx/n/12 6.  \TU/FandolSong-Regular(0)/m/n/12 设 $\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 X\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; t \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 R\OMS/cmsy/m/n/12 g$ \TU/FandolSong-Regular(0)/m/n/12 是 连 续 平 稳 过 程\TU/lmr/m/n/12 , \TU/FandolSong-Regular(0)/m/n/12 均 值 为 \TU/lmr/m/n/12 m, \TU/FandolSong-Regular(0)/m/n/12 协
  []
 
-[4] (./HW15.aux)
+
+Underfull \hbox (badness 1048) in paragraph at lines 325--327
+\TU/FandolSong-Regular(0)/m/n/12 方 差 函 数 为 $\OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^\\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 ae[]$\TU/lmr/m/n/12 , \TU/FandolSong-Regular(0)/m/n/12 其 中 $\OML/cmm/m/it/12 ^^\ \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 R; a; b > \OT1/cmr/m/n/12 0$ \TU/FandolSong-Regular(0)/m/n/12 。|  对 固 定 的
+ []
+
+
+Underfull \hbox (badness 1072) in paragraph at lines 325--327
+\OML/cmm/m/it/12 T > \OT1/cmr/m/n/12 0$\TU/lmr/m/n/12 , \TU/FandolSong-Regular(0)/m/n/12 令 $\OML/cmm/m/it/12 Y \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 T[] [][] X\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 s\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ds$\TU/lmr/m/n/12 , \TU/FandolSong-Regular(0)/m/n/12 证 明\TU/lmr/m/n/12 : $\OML/cmm/m/it/12 E\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 Y\OMS/cmsy/m/n/12 g \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 m$\TU/lmr/m/n/12 , $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Y\OT1/cmr/m/n/12 ) =
+>>>>>>> 1e5a2e1c635bfcd17c0909a0ab2e65779256f018
+ []
+
+[4] [5] [6] (./HW15.aux)
 Package rerunfilecheck Info: File `HW15.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  14853 strings out of 476919
  314383 string characters out of 5821840
  645213 words of memory out of 5000000
@@ -564,5 +585,14 @@ Here is how much of TeX's memory you used:
  417709 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  101i,9n,104p,483b,426s stack positions out of 5000i,500n,10000p,200000b,80000s
+=======
+ 14824 strings out of 476919
+ 312504 string characters out of 5825423
+ 645575 words of memory out of 5000000
+ 34572 multiletter control sequences out of 15000+600000
+ 417701 words of font info for 100 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 101i,10n,104p,464b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
+>>>>>>> 1e5a2e1c635bfcd17c0909a0ab2e65779256f018
 
-Output written on HW15.pdf (4 pages).
+Output written on HW15.pdf (6 pages).
