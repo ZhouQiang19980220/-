@@ -1,0 +1,54 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, bm, color, framed, graphicx, hyperref, mathrsfs}
+
+\title{\textbf{随机过程作业16}}
+\author{周强(119) \ 电子学院 \ \ \  202128019427002}
+\date{\today}
+\linespread{1.5}
+\definecolor{shadecolor}{RGB}{241, 241, 255}
+\newcounter{problemname}
+\newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
+\newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
+\newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
+
+\begin{document}
+
+\maketitle
+
+\begin{problem}
+    设有一线性系统, 其输入为零均值白高斯噪声 $n(t)$, 其功率谱密度为 $\frac{N_{0}}{2}$, 系统的冲激 响应为:
+$$
+h(t)=\left\{\begin{array}{cc}
+e^{-\alpha t}, & t \geq 0 \\
+0, & t<0
+\end{array}\right.
+$$
+此线性系统的输出为 $\xi(t)$ 。令: $\eta(t)=\xi(t)-\xi(t-T)$, 其中 $T>0$ 为一常数, 试求过 程 $\eta(t)$ 的一维概率密度函数。
+\end{problem}
+
+\begin{solution}
+    由于线性系统的输入是高斯白噪声，则输出$\xi(t)$是高斯过程，$\eta(t) = \xi(t) - \xi(t-T)$也是高斯过程。此线性系统的转移函数为
+    \begin{align*}
+        & H(j \omega) = \mathcal{F}  \{ h(t) \} 
+        =
+        \frac{1}{\alpha + j \omega}
+        \\
+        & |H(j \omega)|^2 
+        = 
+        \frac{1}{\alpha ^ 2 + \omega ^ 2}
+    \end{align*}
+    则$\xi (t)$的功率谱函数为
+    \begin{align*}
+        S_{\xi}(\omega) 
+        =
+        |H(j \omega)|^2 S_{n}(t)
+        =
+        \frac{N_0}{2(\alpha ^ 2 + \omega ^ 2)}
+    \end{align*}
+    则$\xi(t)$的相关函数为
+    \begin{align*}
+        R_{\xi}(\tau) = \frac{N_0}{4 \alpha} e ^ {-\alpha |\tau|}
+    \end{align*}
+\end{solution}
+
+\end{document}
